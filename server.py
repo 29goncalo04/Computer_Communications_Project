@@ -21,9 +21,9 @@ def udp_server(address : str, port : str):
 
 
 
-def processamento_tcp(connection, agent_address):
+def processamento_tcp(agent_socket, agent_address):
     while True:
-        message : bytes = connection.recv(1024) #aqui não precisamos de colocar recvfrom porque já temos o ip do agente que aceitamos a ligação
+        message : bytes = agent_socket.recv(1024) #aqui não precisamos de colocar recvfrom porque já temos o ip do agente que aceitamos a ligação
 
         if message == b'':
             exit()
@@ -42,9 +42,9 @@ def tcp_server(address : str, port : str):
         s.listen(5)     #é quase sempre 5 man, mas acho que é kinda irrelevante
 
         while True:
-            connection,agent_address = s.accept()
+            agent_socket,agent_address = s.accept() #aceita a conexão e retorna um novo socket específico para a comunicação com o cliente conectado
 
-            threading.Thread(target=processamento_tcp, args=(connection,agent_address)).start()
+            threading.Thread(target=processamento_tcp, args=(agent_socket,agent_address)).start()
                 #não é preciso join porque não é preciso sincronizar o termino das threads todas, não interessa quando esta termina
             print(f"Recebi uma conexão do {agent_address}")
 
