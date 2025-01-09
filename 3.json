@@ -1,0 +1,31 @@
+[
+    {
+        "task_id": "4",
+        "frequency": 20,
+        "link_metrics":{
+            "bandwidth":{
+                "server_address": "10.0.5.1",
+                "client_address": "10.0.5.2"
+            }
+        }
+    },
+    {
+        "task_id": "5",
+        "frequency": 30,
+        "link_metrics":{
+            "packet_loss":{
+                "server_address": "10.0.4.1",
+                "client_address": "10.0.4.2"
+            }
+        },
+        "alertflow_conditions": "15"
+    },
+    {
+        "task_id": "6",
+        "frequency": 25,
+        "link_metrics":{
+            "ram_usage":"yes"
+        },
+        "alertflow_conditions": "50"
+    }    
+]

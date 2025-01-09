@@ -1,0 +1,28 @@
+[
+    {
+        "task_id": "10",
+        "frequency": 10,
+        "link_metrics":{
+            "jitter":{
+                "server_address": "10.0.7.2",
+                "client_address": "10.0.7.1"
+            }
+        },
+        "alertflow_conditions": "2"
+    },
+    {
+        "task_id": "11",
+        "frequency": 20,
+        "link_metrics":{
+            "cpu_usage":"yes"
+        },
+        "alertflow_conditions": "90"
+    },
+    {
+        "task_id": "12",
+        "frequency": 25,
+        "link_metrics":{
+            "interface_stats": "eth0"
+        }
+    }
+]

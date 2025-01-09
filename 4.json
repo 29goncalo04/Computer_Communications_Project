@@ -1,0 +1,35 @@
+[
+    {
+        "task_id": "7",
+        "frequency": 10,
+        "link_metrics":{
+            "jitter":{
+                "server_address": "10.0.7.2",
+                "client_address": "10.0.7.1"
+            }
+        },
+        "alertflow_conditions": "2"
+    },
+    {
+        "task_id": "8",
+        "frequency": 10,
+        "link_metrics":{
+            "latency":{
+                "destination": "10.0.1.1",
+                "packets": "5",
+                "frequency_packets": "2"
+            }
+        }
+    },
+    {
+        "task_id": "9",
+        "frequency": 30,
+        "link_metrics":{
+            "packet_loss":{
+                "server_address": "10.0.4.1",
+                "client_address": "10.0.4.2"
+            }
+        },
+        "alertflow_conditions": "15"
+    }
+]
